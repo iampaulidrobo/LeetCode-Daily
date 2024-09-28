@@ -1,0 +1,4 @@
+int num = 1e9
+
+
+vector<vector<int>> minA{10, vector<int>(10, 0)};
