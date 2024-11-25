@@ -2,3 +2,18 @@ int num = 1e9
 
 
 vector<vector<int>> minA{10, vector<int>(10, 0)};
+vector<vector<char>> result(n, vector<char>(m));
+
+November:
+1)      count == k ? count: count+1;
+
+2)      vector<int> count(3, 0);
+        // Count total occurrences
+        for (char c : s) {
+            count[c - 'a']++;
+        }
+3)      sort(items.begin(), items.end(),
+             [](vector<int>& a, vector<int>& b) { return a[0] < b[0]; });
+
+
+4)      int mid=s+(e-s)/2;
