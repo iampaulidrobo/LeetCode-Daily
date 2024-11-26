@@ -17,3 +17,11 @@ November:
 
 
 4)      int mid=s+(e-s)/2;
+
+5)      std::vector<std::vector<int>> matrix = {{1, 2, 3}, {4, 5}, {6, 7, 8, 9}};
+
+        // Get the number of rows (outer vector size)
+        int num_rows = matrix.size();
+
+        // Get the number of columns in the first row (inner vector size)
+        int num_cols = matrix[0].size();
