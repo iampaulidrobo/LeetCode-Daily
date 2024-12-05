@@ -16,7 +16,7 @@
 
 [![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/make-string-a-subsequence-using-cyclic-increments/description/) 
 
-5 Dec'24->2337. Move Pieces to Obtain a String
+5 Dec'24->2337. Move Pieces to Obtain a String-Consider using queue to store the letter and its relevant index.We can ignore underscore as of now.When all the letters are score in two different queue along with their paired relevant index we can iterate to check that both should have same letter ,if not than try comparing index as 'L' can move one way and so does 'R'
 
 [![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/move-pieces-to-obtain-a-string/description/) 
 
