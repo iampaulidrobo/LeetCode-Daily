@@ -1,5 +1,5 @@
 
-1.Reverse Integer-pop from the original number and push to the temperory number.
+1.Reverse Integer-pop from the original number and push to the tempnumber.
 
 [![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/reverse-integer/description/) 
 
@@ -371,6 +371,8 @@ https://leetcode.com/problems/count-sorted-vowel-strings/solutions/5675413/dp-de
 
 
 55.Product of Array Except Self-
+;
+
         class Solution {
         public:
             vector<int> productExceptSelf(vector<int>& nums) {
@@ -419,13 +421,61 @@ https://leetcode.com/problems/count-sorted-vowel-strings/solutions/5675413/dp-de
 [![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/merge-sorted-array/description/) 
 
 
-60.
-
-[![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/) 
+60.Daily Temperatures-put all the temperature indexes in stack.If the new value is more than the current top,then add to the days_result=i-st.top().{Whenever we need to hold at particular index and traverse the array ,use stack}
 
 
-61.
-
-[![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/) 
+[![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/daily-temperatures/description/) 
 
 
+61.Next Greater Element I-We want to sort num2 and also should get direct info about if num1[i] is present or not.Sort using stack and hold in undered_map.
+
+
+[![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/next-greater-element-i/description/) 
+
+
+62.Divide Array Into Arrays With Max Difference-sort the vector.Push into the result vector with check of 1st and 3rd(bcz 2nd will qualify already in that case)
+
+[![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/divide-array-into-arrays-with-max-difference/description/) 
+
+
+63.Number of Students Unable to Eat Lunch-get from vector to the q and stack.Match stack top with q front and drop if matches(also make lastserved=0) and push to q if don't and increment a variable(lastserved) to keep track  and compare that with the q size to leave the loop.Return q size. 
+
+[![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/number-of-students-unable-to-eat-lunch/description/) 
+
+64.Best Time to Buy and Sell Stock-Iterate and update the min value.Hold the max_profit.
+;
+
+            res = max(res, prices[i] - minValue);
+            minValue = min(minValue, prices[i]);
+
+
+[![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/) 
+
+65.Sequential Digits-start from single digit and keep adding +1 of tenth.If the number lies between low and high,add it to our result.Iterate from 10 to number length to 10^9.Break if number goes higher than high.
+
+
+[![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/sequential-digits/description/)
+
+66.Minimum Size Subarray Sum-Variable size Sliding window.if the increase right till we get sum eq/gr to target and there after increase left till condition satisfies.
+
+
+[![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/minimum-size-subarray-sum/description/) 
+
+67. Minimum Window Substring-Use two pointers: start and end to represent a window.Move end to find a valid window.When a valid window is found, move start to find a smaller window.Using unordered map to store freq of smaller string elements and utilise them while moving in the window .
+
+
+[![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/minimum-window-substring/description/) 
+
+68.Running Sum of 1d Array
+
+
+[![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/running-sum-of-1d-array/description/) 
+
+69.Remove Element-compare and update value in the same array by using extra variable j.
+
+
+[![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/remove-element/description/) 
+
+70.First Unique Character in a String-unordered_map
+
+[![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/first-unique-character-in-a-string/description/) 

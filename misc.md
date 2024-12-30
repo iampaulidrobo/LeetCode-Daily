@@ -1,6 +1,6 @@
 int num = 1e9
 
-
+  vector<int> discount(prices.size(),0);
 vector<vector<int>> minA{10, vector<int>(10, 0)};
 vector<vector<char>> result(n, vector<char>(m));
 

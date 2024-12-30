@@ -1,36 +1,25 @@
 class Solution {
 public:
-    bool canChange(string start, string target) {
-        // Queue to store characters and indices from both strings
-        queue<pair<char, int>> startQueue, targetQueue;
+    vector<bool> isArraySpecial(vector<int>& nums, vector<vector<int>>& queries) {
 
-        // Record non-underscore characters and their indices
-        for (int i = 0; i < start.size(); i++) {
-            if (start[i] != '_') {
-                startQueue.push({start[i], i});
+        vector<int> parity_storage;
+        int n{0};
+        for(int i;i<nums.size();i++){
+
+        if(nums[i]%2==0){parity_storage.push_back('e');}
+        else {parity_storage.push_back('o');}
+
+        }
+        for(auto &query:queries){
+            for (auto &q:query)
+            {
+               
             }
-            if (target[i] != '_') {
-                targetQueue.push({target[i], i});
-            }
+            
+
         }
 
-        // If number of pieces don't match, return false
-        if (startQueue.size() != targetQueue.size()) return false;
 
-        // Compare each piece's type and position
-        while (!startQueue.empty()) {
-            auto [startChar, startIndex] = startQueue.front();
-            startQueue.pop();
-            auto [targetChar, targetIndex] = targetQueue.front();
-            targetQueue.pop();
-
-            // Check character match and movement rules
-            if (startChar != targetChar ||
-                (startChar == 'L' && startIndex < targetIndex) ||
-                (startChar == 'R' && startIndex > targetIndex))
-                return false;
-        }
-
-        return true;
+        
     }
 };
