@@ -1,25 +1,32 @@
 class Solution {
 public:
-    vector<bool> isArraySpecial(vector<int>& nums, vector<vector<int>>& queries) {
+    int countServers(const vector<vector<int>>& grid) {
+        vector<int> rowCounts(size(grid[0]), 0), colCounts(size(grid), 0);
+        bool got_one_server=false;
+        int result{0};
 
-        vector<int> parity_storage;
-        int n{0};
-        for(int i;i<nums.size();i++){
+        // Count servers in each row and each column
+        for (int row = 0; row < size(grid); ++row){
 
-        if(nums[i]%2==0){parity_storage.push_back('e');}
-        else {parity_storage.push_back('o');}
-
+        got_one_server=false;
+            for (int col = 0; col < size(grid[0]); ++col)
+                if (grid[row][col]) {
+                    if(got_one_server==true){
+                        result++;
+                    }
+                    rowCounts[col]++;
+                    colCounts[row]++;
+                }
         }
-        for(auto &query:queries){
-            for (auto &q:query)
-            {
-               
-            }
-            
+        int communicableServersCount = 0;
 
-        }
+        // Count servers that can communicate (in the same row or column)
+        for (int row = 0; row < size(grid); ++row)
+            for (int col = 0; col < size(grid[0]); ++col)
+                if (grid[row][col])
+                    communicableServersCount +=
+                        rowCounts[col] > 1 || colCounts[row] > 1;
 
-
-        
+        return communicableServersCount;
     }
 };

@@ -461,7 +461,7 @@ https://leetcode.com/problems/count-sorted-vowel-strings/solutions/5675413/dp-de
 
 [![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/minimum-size-subarray-sum/description/) 
 
-67. Minimum Window Substring-Use two pointers: start and end to represent a window.Move end to find a valid window.When a valid window is found, move start to find a smaller window.Using unordered map to store freq of smaller string elements and utilise them while moving in the window .
+67. Minimum Window Substring-Use two pointers: start and end to represent a window.Move end to find a valid window.When a valid window is found, move start to find a smaller window in the same valid window.
 
 
 [![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/minimum-window-substring/description/) 
@@ -479,3 +479,100 @@ https://leetcode.com/problems/count-sorted-vowel-strings/solutions/5675413/dp-de
 70.First Unique Character in a String-unordered_map
 
 [![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/first-unique-character-in-a-string/description/) 
+
+71.Partition Array for Maximum Sum-Iterate through the whole array,use k to find max(save_max and index) of subarray taking array index 0(fir the first time),overwrite the value in og array.
+next interation of index check with save_max and index difference of k(to get new sav_max and index),overwrite and repeat
+Store sum in dp for each index
+
+
+
+[![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/partition-array-for-maximum-sum/description/) 
+
+72.Group Anagrams-in sort the word and store in unordered_map with its index.
+
+[![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/group-anagrams/description/) 
+
+73.Design Parking System
+
+[![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/design-parking-system/description/) 
+
+74.Remove Duplicates from Sorted Array-use variable j and overwrite if current not equal to previous.
+
+
+[![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/) 
+
+75.Sort Characters By Frequency-
+;
+class Solution {
+public:
+    string frequencySort(string s) {
+        unordered_map<char,int> freq;
+        vector<string> bucket(s.size()+1, "");
+        string res;
+        
+        //count frequency of each character
+        for(char c:s) freq[c]++;
+        //put character into frequency bucket
+        for(auto& it:freq) {
+            int n = it.second;
+            char c = it.first;
+            bucket[n].append(n, c);
+        }
+        //form descending sorted string
+        for(int i=s.size(); i>0; i--) {
+            if(!bucket[i].empty())
+                res.append(bucket[i]);
+        }
+        return res;
+    }
+};
+[![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)]() 
+
+76.Perfect Squares-
+![alt text](6f9ff4fa-088f-41db-b464-307c119d55ba_1634187491.871502.jpeg)
+
+[![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/perfect-squares/description/) 
+
+
+
+77.Maximum Sum With Exactly K Elements-find the max value,add it to score k times with +1(k-1) times
+
+
+[![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/maximum-sum-with-exactly-k-elements/description/) 
+
+78.Minimum Operations to Make the Array Increasing-iterate through,if dec value found +1 and store count,Keep doing untill finish
+
+
+[![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/minimum-operations-to-make-the-array-increasing/description/) 
+
+79.Largest Divisible Subset-sort,traverse all index array and store their divisors
+![alt text](image_1592042710.png)
+
+[![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/largest-divisible-subset/description/) 
+
+80.Palindromic Substrings-find all substring,check for palindrome.
+class Solution {
+public:
+    int countSubstrings(string s) {
+        int n = s.length(), ans = 0;
+        for (int i = 0; i < n; ++i) {
+            int even = palindromeCount(s, i, i + 1);
+            int odd = palindromeCount(s, i, i);
+            ans += even + odd;
+        }
+        return ans;
+    }
+
+    int palindromeCount(const string& s, int left, int right) {
+        int count = 0;
+        while (left >= 0 && right < s.length() && s[left] == s[right]) {
+            --left;
+            ++right;
+            ++count;
+        }
+        return count;
+    }
+};
+
+[![Leetcode](https://camo.githubusercontent.com/5165fca7fe088ad43f15e5de8531a550a0bfa862e500a329c8141e8eaa656cc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c656574636f64652d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4c656574436f6465266c6f676f436f6c6f723d23643136633036)](https://leetcode.com/problems/palindromic-substrings/description/) 
+
